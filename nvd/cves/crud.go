@@ -51,6 +51,29 @@ func (s *CVEs) List(ctx context.Context, req *ListRequest) (*CVEResponse, *resty
 	return &result, resp, nil
 }
 
+func (s *CVEs) ListSingle(ctx context.Context, req *ListRequest) (*CVEResponse, *resty.Response, error) {
+	var result CVEResponse
+
+	endpoint := constants.EndpointCVEs
+
+	var queryParams map[string]string
+	if req != nil {
+		queryParams = req.ToQueryParams()
+	}
+
+	resp, err := s.client.NewRequest(ctx).
+		SetHeader("Accept", constants.ApplicationJSON).
+		SetQueryParams(queryParams).
+		SetResult(&result).
+		Get(endpoint)
+
+	if err != nil {
+		return nil, resp, fmt.Errorf("failed to list CVEs: %w", err)
+	}
+
+	return &result, resp, nil
+}
+
 func (s *CVEs) GetByID(ctx context.Context, cveID string) (*VulnerabilityItem, *resty.Response, error) {
 	if cveID == "" {
 		return nil, nil, fmt.Errorf("CVE ID is required")

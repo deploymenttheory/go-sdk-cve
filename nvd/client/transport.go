@@ -98,26 +98,28 @@ func NewTransport(cfg *config.Config, opts ...ClientOption) (*Transport, error) 
 	restyClient.AddRetryHooks(func(r *resty.Response, err error) {
 		if r != nil {
 			statusCode := r.StatusCode()
-			if statusCode == 429 {
-				logger.Warn("Rate limited, retrying with 30s backoff",
-					zap.Int("status_code", statusCode),
-					zap.Int("attempt", r.Request.Attempt),
-					zap.Int("max_retries", retryCount),
-				)
-			} else if statusCode >= 500 {
-				attempt := r.Request.Attempt
-				if attempt == 0 {
-					attempt = 1
+			if statusCode == 429 || (statusCode >= 500 && statusCode < 600) {
+				waitTime, _ := retryStrategyFunc(r, err)
+				
+				if statusCode == 429 {
+					logger.Warn("Rate limited, sleeping before retry",
+						zap.Int("status_code", statusCode),
+						zap.Int("attempt", r.Request.Attempt),
+						zap.Int("max_retries", retryCount),
+						zap.Duration("wait_time", waitTime),
+					)
+				} else {
+					logger.Warn("Server error, sleeping before retry",
+						zap.Int("status_code", statusCode),
+						zap.Int("attempt", r.Request.Attempt),
+						zap.Int("max_retries", retryCount),
+						zap.Duration("wait_time", waitTime),
+					)
 				}
-				waitTime := time.Duration(1<<uint(attempt)) * time.Second
-				if waitTime > 60*time.Second {
-					waitTime = 60 * time.Second
+				
+				if waitTime > 0 {
+					time.Sleep(waitTime)
 				}
-				logger.Warn("Server error, retrying with exponential backoff",
-					zap.Int("status_code", statusCode),
-					zap.Int("attempt", r.Request.Attempt),
-					zap.Duration("wait_time", waitTime),
-				)
 			}
 		}
 	})
