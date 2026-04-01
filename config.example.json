@@ -1,0 +1,5 @@
+{
+  "api_key": "your-nvd-api-key-here",
+  "base_url": "https://services.nvd.nist.gov",
+  "hide_sensitive_data": false
+}

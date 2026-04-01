@@ -1,50 +1,49 @@
-# macOS
-.DS_Store
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 
-# VSCode
-.vs
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# Build and temp files
-/build/
-/tmp/
-*.log
-*.bak
-
-# Windows-specific 
-*.winfile eol=crlf
-
-# Go development
+# Test binary, built with `go test -c`
 *.test
-/vendor/
-/bin/
-/dist/
-/pkg/
-coverage.out
+
+# Output of the go coverage tool
+*.out
+coverage.txt
 coverage.html
 
-# Python virtual environments
-scripts/python/venv/
+# Go workspace file
+go.work
+go.work.sum
 
-# Python cache and compiled files
-__pycache__/
-*.py[cod]
-*$py.class
-*.pyo
-.pytest_cache/
-*.egg-info/
+# Dependency directories
+vendor/
 
-# AI instructions
-.claude
-.cursor
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 
-# Binaries and executables
-*.dll
-*.exe
-*.dylib
-*.so
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Environment and config files with secrets
+.env
+.env.local
+config.json
+!config.example.json
+!.env.example
+*.key
+*.pem
+
+# Build artifacts
+dist/
+build/
+bin/
+
+# Logs
+*.log

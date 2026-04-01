@@ -1,70 +1,57 @@
-# Project Title
+# Documentation
 
-Simple overview of your project and its use or purpose.
-
->Make use of the [Markdow Syntax Guide](markdown-syntax-guide.md).
-
-## Description
-
-Describe your project.
+Welcome to the NVD CVE API SDK documentation.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+- **[Quick Start Guide](quick-start.md)** - Get up and running in 5 minutes
+- **[API Reference](api-reference.md)** - Complete API documentation
+- **[Usage Guide](usage-guide.md)** - Common patterns and best practices
+- **[Rate Limiting Guide](rate-limiting.md)** - Handle rate limits gracefully
+- **[Examples](examples.md)** - Code examples for common use cases
+- **[Architecture](architecture.md)** - SDK design and architecture
 
-### Prerequisites
+## Quick Links
 
-Describe any prerequisites or dependencies.
+### For New Users
 
-### Installation
+1. Start with the [Quick Start Guide](quick-start.md)
+2. Run the [examples](../examples/)
+3. Read the [Usage Guide](usage-guide.md) for common patterns
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+### For Advanced Users
 
-  ```bash
-  iex "&amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
-  ```
+1. Review the [API Reference](api-reference.md) for all parameters
+2. Study the [Architecture](architecture.md) document
+3. Check out the [comprehensive example](../examples/comprehensive/)
 
-## Usage
+### For Contributors
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. Read the [Contributing Guidelines](../CONTRIBUTING.md)
+2. Review the [Architecture](architecture.md) document
+3. Follow the existing patterns in the codebase
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+## API Coverage
 
+This SDK provides complete coverage of:
 
-## FAQ and Known Issues
+- **CVE API v2.0**: All 30+ parameters supported
+- **CVE Change History API v2.0**: All event types and filters
 
-Any advise for common problems or issues.
-  ```bash
-  command to run if program contains helper info
-  ```
+## Features
 
-## Contributors
+- ✅ Automatic pagination
+- ✅ Retry logic with exponential backoff
+- ✅ Rate limit handling
+- ✅ Structured logging
+- ✅ Flexible configuration
+- ✅ Type-safe models
+- ✅ Error handling helpers
+- ✅ Production-ready transport
 
-Contributors names and contact info
+## External Resources
 
-* You, Yourself and the Universe
-* [@your_twitter](<https://twitter.com/your_username>)
-
-## Contribution
-
-If you would like to become an active contributor to this repository or project, please follow the instructions provided in [`CONTRIBUTING.md`](../CONTRIBUTING.md).
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](<https://twitter.com/your_username>) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](<https://github.com/your_username/repo_name>)
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See [`LICENSE`](`../../LICENSE`).
-
-## References
-
-* [Emoji Cheat Sheet](<https://github.com/ikatyang/emoji-cheat-sheet>)
-* [License Helper](<https://choosealicense.com/>)
+- [NVD CVE API Documentation](https://nvd.nist.gov/developers/vulnerabilities)
+- [Request an API Key](https://nvd.nist.gov/developers/request-an-api-key)
+- [CVE Program](https://www.cve.org/)
+- [CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
