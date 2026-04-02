@@ -3,7 +3,7 @@ module github.com/deploymenttheory/go-sdk-cve
 go 1.25.0
 
 require (
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.11.1
 	go.uber.org/zap v1.27.1
 	resty.dev/v3 v3.0.0-beta.6
 )
