@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.0 (2026-08-25)
+
+
+### Features
+
+* 1st commit ([10134e3](https://github.com/deploymenttheory/go-sdk-cve/commit/10134e32e2a23b4a0640ae300d7caf43315befaa))
+* enhance error handling and retry logic in transport and add ListSingle method for CVEs ([18bf01d](https://github.com/deploymenttheory/go-sdk-cve/commit/18bf01dafbe0e87a027a17cc2ee170faa2e3d977))
+
 ## [Unreleased]
 
 ## [0.1.0] - 2026-04-01
